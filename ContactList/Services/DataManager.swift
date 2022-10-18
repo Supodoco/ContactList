@@ -9,6 +9,8 @@ import Foundation
 
 
 class DataManager {
+    static let shared = DataManager()
+    
     private let names = [
         "Liam",
         "Olivia",
@@ -21,6 +23,7 @@ class DataManager {
         "James",
         "Ava"
     ].shuffled()
+    
     private let surnames = [
         "Thompson",
         "Evans",
@@ -46,7 +49,6 @@ class DataManager {
     }.shuffled()
     
     private init() {}
-    static let shared = DataManager()
     
     func getPersons() -> [Person] {
         (0...names.count - 1).map {
