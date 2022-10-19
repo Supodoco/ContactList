@@ -9,7 +9,7 @@ import UIKit
 
 class ContactsWithDetailViewController: UITableViewController {
 
-    let persons = DataManager.shared.getPersons()
+    private let persons = Person.getPersons()
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         persons.count

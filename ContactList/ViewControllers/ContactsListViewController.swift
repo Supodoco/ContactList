@@ -9,7 +9,7 @@ import UIKit
 
 class ContactsListViewController: UITableViewController {
     
-    let persons = DataManager.shared.getPersons()
+    private let persons = Person.getPersons()
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         persons.count
@@ -26,6 +26,6 @@ class ContactsListViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let detailVC = segue.destination as? ContactDetailViewController
         guard let indexPath = tableView.indexPathForSelectedRow else { return }
-        detailVC?.person = persons[indexPath.row]        
+        detailVC?.person = persons[indexPath.row]
     }
 }
