@@ -14,9 +14,11 @@ struct Person {
     var fullName: String {
         name + " " + surname
     }
-    static let data = DataStore()
-    
+}
+
+extension Person {
     static func getPersons() -> [Person] {
+        let data = DataStore.shared
         return (0..<data.names.count).map {
             Person(
                 name: data.names[$0],
